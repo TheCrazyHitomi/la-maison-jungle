@@ -1,0 +1,29 @@
+.lmj-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    color: black;
+    padding: 16px;
+    border-bottom: solid 3px black;
+    height: 120px;
+}
+.lmj-banner-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+
+}
+
+
+.lmj-title{
+    padding-left: 16px;
+    margin: 2px;
+}
+
+.lmj-logo{
+    width: 45px;
+    height: 45px;
+}

@@ -1,0 +1,16 @@
+.lmj-sales {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	font-weight: 500;
+	color: white;
+	padding: 5px 10px;
+	background-color: #31b572;
+}
+
+.lmj-plant-list{
+	display: grid;
+	grid-template-columns: repeat(5, 220px);
+	grid-gap: 40px;
+
+}
