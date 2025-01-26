@@ -1,5 +1,5 @@
 import { plantList } from "../datas/plantList.jsx"
-import "../styles/ShoppingList.css"
+import "../styles/shoppingList.css"
 import PlantItem from "./plantItem.jsx"
 import BestSales from "./bestSales.jsx"
 import SpecialOffer from "./specialOffer.jsx"
