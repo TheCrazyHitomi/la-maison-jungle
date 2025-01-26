@@ -1,5 +1,5 @@
 import CareScale from "./careScale"
-import "../styles/PlantItem.css"
+import "../styles/plantItem.css"
 
 
 function handleClick(plantName) {
