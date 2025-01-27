@@ -34,7 +34,7 @@ const ShoppingList = () =>{
         console.log(categories)
 
 	return (
-		<div>
+		<div className="lmj-hero">
 			<ul>
 				{categories.map((cat) => (
 					<li key={cat}>{cat}</li>
