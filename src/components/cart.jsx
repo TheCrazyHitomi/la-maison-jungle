@@ -28,6 +28,8 @@ const Cart = () => {
 			<button className="lmj-cart-Button" onClick={()=> setCart(cart + 1)}>Ajouter</button>
 			</div>
 			<h3>Total : {monsteraPrice * cart}€</h3>
+
+			<button className="lmj-cart-button" onClick={() =>setCart(0)}>Vider le panier</button>
 			{/* <ul>
 				<li> Monstera : {monsteraPrice} €</li>
 				<li> Lierre : {ivyPrice} €</li>
