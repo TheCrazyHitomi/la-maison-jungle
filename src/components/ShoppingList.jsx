@@ -5,7 +5,7 @@ import BestSales from "./bestSales.jsx"
 import SpecialOffer from "./specialOffer.jsx"
 
 
-const ShoppingList = () =>{
+const ShoppingList = ({cart,setCart}) =>{
     
     // const categorie = plantList.reduce((acc, plant) =>{
     //     if(!acc[plant.category]){
@@ -33,6 +33,21 @@ const ShoppingList = () =>{
         )
         console.log(categories)
 
+        function addToCart(name,price) {
+            const currentPlantAdded = cart.find((plant) => plant.name === name)
+            if (currentPlantAdded) {
+                const cartFilteredCurrentPlant = cart.filter(
+                    (plant) => plant.name !== name
+                )
+                setCart([
+                    ...cartFilteredCurrentPlant,
+                    {name, price, amount: currentPlantAdded.amount +1 }
+                ])
+            } else {
+                setCart([...cart, {name, price, amount :1}])
+            }
+        }
+
 	return (
 		<div className="lmj-hero">
 			<ul>
@@ -41,14 +56,18 @@ const ShoppingList = () =>{
 				))}
 			</ul>
 			<ul className='lmj-plant-list' >
-            {plantList.map(({ id, cover, name, water, light}) => (
+            {plantList.map(({ id, cover, name, water, light, price}) => (
+                <div key={id}>
 					<PlantItem
 						id={id}
 						cover={cover}
 						name={name}
+                        price={price}
 						water={water}
 						light={light}
 					/>
+                    <button onClick={() => addToCart(name, price)}>Ajouter</button>
+                </div>
             ))}
 
 			</ul>
