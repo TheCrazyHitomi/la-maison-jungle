@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/cart.css"
-import { use } from "react";
+
 
 // const totalPanier = Number(monstera + lierre + bouquet);
 // console.log(totalPanier);

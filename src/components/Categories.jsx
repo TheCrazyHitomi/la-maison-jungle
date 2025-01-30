@@ -1,14 +1,20 @@
-export const Categories = ({categories}) => {
+import "../styles/Categories.css"
+
+export const Categories = ({categories, selectedCategory, setSelectedCategory}) => {
+
+
 
     return(
-        <select name="" id="">
-        <option>
-            <ul>
-                {categories.map((cat) => (
-                    <li key={cat}>{cat}</li>
-                ))}
-            </ul>
-        </option>
-        </select>
+        <div>
+            <label  className="lmj-category" >Catégorie :
+                <select name="Catégorie" value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}>
+                    <option value="">--</option>
+                    {categories.map((category) => (
+                        <option key={category}>{category}</option>
+                    ))} 
+                </select>
+                <button onClick={() => setSelectedCategory("")}>Réinitialiser</button>
+            </label>
+        </div>
     )
 }
