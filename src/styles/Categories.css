@@ -1,5 +1,5 @@
 .lmj-category{
-    width: 300px;
+    width: 400px;
     display: flex;
     justify-content: space-evenly;
     color: rgb(42, 51, 48);
@@ -11,5 +11,4 @@ select{
     border-radius: 6px;
     border:1px solid grey;
     cursor: pointer;
-    
 }
