@@ -17,6 +17,7 @@
 }
 
 .lmj-hero{
+	margin: 40px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;

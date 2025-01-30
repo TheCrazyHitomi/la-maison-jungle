@@ -1,9 +1,12 @@
 import { plantList } from "../datas/plantList.jsx"
-import "../styles/shoppingList.css"
+import { Categories } from "./Categories.jsx"
+import { useState } from "react"
+
 import PlantItem from "./plantItem.jsx"
 import BestSales from "./bestSales.jsx"
 import SpecialOffer from "./specialOffer.jsx"
-import { Categories } from "./Categories.jsx"
+
+import "../styles/shoppingList.css"
 
 
 const ShoppingList = ({cart,setCart}) =>{
@@ -49,23 +52,30 @@ const ShoppingList = ({cart,setCart}) =>{
             }
         }
 
+        const [selectedCategory, setSelectedCategory] = useState("")
+
+        
+
 	return (
 		<div className="lmj-hero">
-			<Categories categories={categories}/>
+			<Categories categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+            
 			<ul className='lmj-plant-list' >
-            {plantList.map(({ id, cover, name, water, light, price}) => (
-                <div key={id}>
-					<PlantItem
-						id={id}
-						cover={cover}
-						name={name}
-                        price={price}
-						water={water}
-						light={light}
-					/>
-                    <button onClick={() => addToCart(name, price)}>Ajouter</button>
-                </div>
-            ))}
+                {plantList.map(({ id, cover, name, water, light, price, category}) => 
+                    !selectedCategory || selectedCategory === category ? (
+                    <div key={id}>
+                        <PlantItem
+                            id={id}
+                            cover={cover}
+                            name={name}
+                            price={price}
+                            water={water}
+                            light={light}
+                        />
+                        <button onClick={() => addToCart(name, price)}>Ajouter</button>
+                    </div>
+                ) : null
+            )}
 
 			</ul>
 		</div>

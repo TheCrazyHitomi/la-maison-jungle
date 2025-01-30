@@ -1,6 +1,10 @@
+:root {
+  color-scheme: only light;
+}
+
 body{
   background-color: whitesmoke;
-
+  
 }
 
 .lmj-main{
