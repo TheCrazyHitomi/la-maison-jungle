@@ -1,6 +1,10 @@
+body{
+  background-color: whitesmoke;
+
+}
+
 .lmj-main{
   display: flex;
   flex-direction: row;
-  background-color: whitesmoke;
 }
 

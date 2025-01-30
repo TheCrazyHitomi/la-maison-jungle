@@ -3,6 +3,7 @@ import "../styles/shoppingList.css"
 import PlantItem from "./plantItem.jsx"
 import BestSales from "./bestSales.jsx"
 import SpecialOffer from "./specialOffer.jsx"
+import { Categories } from "./Categories.jsx"
 
 
 const ShoppingList = ({cart,setCart}) =>{
@@ -50,11 +51,7 @@ const ShoppingList = ({cart,setCart}) =>{
 
 	return (
 		<div className="lmj-hero">
-			<ul>
-				{categories.map((cat) => (
-					<li key={cat}>{cat}</li>
-				))}
-			</ul>
+			<Categories categories={categories}/>
 			<ul className='lmj-plant-list' >
             {plantList.map(({ id, cover, name, water, light, price}) => (
                 <div key={id}>
