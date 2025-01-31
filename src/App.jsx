@@ -9,7 +9,7 @@ import "./styles/App.css"
 function App() {
   const [cart, setCart] = useState(() => {
     const storedCart = localStorage.getItem('cart')
-      return storedCart ? JSON.parse(storedCart) : {name :"", price :"", amount:""}
+      return storedCart ? JSON.parse(storedCart) : []
   })
 
   
