@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/cart.css"
 
 
@@ -6,12 +6,16 @@ import "../styles/cart.css"
 // console.log(totalPanier);
 
 const Cart = ({cart, setCart}) => {
-	const [isOpen, setIsOpen] = useState(false)
+	const [isOpen, setIsOpen] = useState(true)
 	const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
-
+	useEffect(() => {
+		if (total > 0)
+		alert(`J'aurai ${total}€ à payer 💸`)
+	}, [total])
+	
 	return isOpen ? (
 		<div className="lmj-cart">
 			<button className="lmj-cart-toggle-button" onClick={() => setIsOpen(false)}>Fermer</button>

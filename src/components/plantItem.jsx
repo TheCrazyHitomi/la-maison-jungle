@@ -7,11 +7,14 @@ function handleClick(plantName) {
     alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix 🌱✨`)
 }
 
-const PlantItem =({id, name, cover, water, light}) => {
+const PlantItem =({id, name, cover, water, light, price}) => {
 
     return (
             <li key={id} className='lmj-plant-item' onClick={() => handleClick(name)} >
-                <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
+                <div className="lmj-plant-item-cover">
+                <div className="lmj-plant-price">{price}€</div>
+                <img className="lmj-plant-cover" src={cover} alt={`${name} cover`} />
+                </div>
                 <div className="lmj-plant-info">
                     {name}
                     <div>
