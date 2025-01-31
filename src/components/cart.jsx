@@ -11,10 +11,11 @@ const Cart = ({cart, setCart}) => {
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
-	useEffect(() => {
-		if (total > 0)
-		alert(`J'aurai ${total}€ à payer 💸`)
-	}, [total])
+	// useEffect(() => {
+	// 	if (total > 0)
+	// 	alert(`J'aurai ${total}€ à payer 💸`)
+	// }, [total])
+	
 	
 	return isOpen ? (
 		<div className="lmj-cart">
