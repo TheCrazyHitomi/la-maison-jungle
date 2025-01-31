@@ -6,7 +6,7 @@ import "../styles/cart.css"
 
 const Cart = ({cart, setCart}) => {
 	const [isOpen, setIsOpen] = useState(true)
-	const total = cart?.reduce(
+	const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	) || 0;
