@@ -24,12 +24,13 @@ const Cart = ({cart, setCart}) => {
 			<button className="lmj-cart-toggle-button" onClick={() => setIsOpen(false)}>Fermer</button>
             <h2>Panier : 🛒</h2>
 			{/* <div className="lmj-article"> */}
-	
-				{cart.map(({name, price, amount}, index) => (
+
+				{Array.isArray(cart) ? (cart.map(({name, price, amount}, index) => (
 					<div key={`${name}-${index}`}>
 						{name} {price}€ x {amount}
 					</div>
-				))}
+				))) : (<></>)
+			}
 			{/* </div> */}
 
 			<h3>Total : {total}€</h3>
