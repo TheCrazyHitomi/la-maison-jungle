@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../styles/cart.css"
+import PropTypes from 'prop-types';
 
 // const totalPanier = Number(monstera + lierre + bouquet);
 // console.log(totalPanier);
@@ -44,6 +45,16 @@ const Cart = ({cart, setCart}) => {
 			<button className="lmj-cart-toggle-button" onClick={() => setIsOpen(true)}>Ouvrir le Panier</button>
 		</div>
 	)
+};
+Cart.propTypes = {
+	cart: PropTypes.arrayOf(
+		PropTypes.shape({
+			name: PropTypes.string.isRequired,
+			price: PropTypes.number.isRequired,
+			amount: PropTypes.number.isRequired
+		})
+	).isRequired,
+	setCart: PropTypes.func.isRequired
 };
 
 export default Cart

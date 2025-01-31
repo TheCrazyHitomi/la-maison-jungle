@@ -1,5 +1,6 @@
 import CareScale from "./careScale"
 import "../styles/plantItem.css"
+import PropTypes from 'prop-types'
 
 
 function handleClick(plantName) {
@@ -28,6 +29,15 @@ const PlantItem =({id, name, cover, water, light, price}) => {
 
 
 
+PlantItem.propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+    water: PropTypes.number.isRequired,
+    light: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired
+}
 
 export default PlantItem
+
 
