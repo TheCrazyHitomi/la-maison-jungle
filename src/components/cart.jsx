@@ -9,7 +9,7 @@ const Cart = ({cart, setCart}) => {
 	const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
-	) || 0;
+	);
 	// useEffect(() => {
 	// 	if (total > 0)
 	// 	alert(`J'aurai ${total}€ à payer 💸`)
